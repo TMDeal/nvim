@@ -10,6 +10,9 @@ require 'user.options'
 -- Keymaps not related to plugins
 require 'user.keymaps'
 
+-- Autocmds not related to plugins
+require 'user.autocmds'
+
 -- configs for plugins
 require 'user.plugins.autopairs'
 require 'user.plugins.cmp'
