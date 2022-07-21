@@ -123,6 +123,17 @@ packer.startup(function(use)
     -- Visualise indent levels
     use "lukas-reineke/indent-blankline.nvim"
 
+    -- Fancy Statusline
+    use "hoob3rt/lualine.nvim"
+
+    -- Fancy Icons
+    use {
+        "kyazdani42/nvim-web-devicons",
+        config = function()
+            require("nvim-web-devicons").setup()
+        end
+    }
+
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
     if packer_bootstrap then
