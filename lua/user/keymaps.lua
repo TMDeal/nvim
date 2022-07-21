@@ -45,3 +45,6 @@ keymap('n', 'Y', 'y$', opts)
 
 -- Remap escape to leave terminal mode
 keymap("t", "<ESC>", "<c-\\><c-n>", term_opts)
+
+-- Buffer mappings
+keymap("n", "<leader>q", ":Bdelete<CR>", opts)

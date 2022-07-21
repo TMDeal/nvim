@@ -1,3 +1,6 @@
+-- Needs to be loaded first
+require 'user.plugins.impaitent'
+
 -- Packer related stuff
 require 'user.packer'
 

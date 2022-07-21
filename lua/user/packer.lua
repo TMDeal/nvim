@@ -55,6 +55,9 @@ packer.startup(function(use)
     -- Prerequisite for most lua plugins
     use "nvim-lua/plenary.nvim"
 
+    -- Make startup fastlike
+    use "lewis6991/impatient.nvim"
+
     -- Colorschemes
     use {
         "arcticicestudio/nord-vim",
