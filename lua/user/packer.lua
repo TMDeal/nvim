@@ -80,7 +80,7 @@ packer.startup(function(use)
 
     -- Telescope
     use {
-        'nvim-telescope/telescope.nvim',
+        "nvim-telescope/telescope.nvim",
         tag = '0.1.0',
         requires = {
             { 'nvim-lua/plenary.nvim' }
@@ -89,20 +89,28 @@ packer.startup(function(use)
 
     -- Treesitter
     use {
-        'nvim-treesitter/nvim-treesitter',
+        "nvim-treesitter/nvim-treesitter",
         run = function()
             require('nvim-treesitter.install').update({ with_sync = true })
         end
     }
 
     -- Set commentstring based on cursor position in file
-    use 'JoosepAlviste/nvim-ts-context-commentstring'
+    use "JoosepAlviste/nvim-ts-context-commentstring"
 
     -- Close matching sets of (,",',} and so on
     use "windwp/nvim-autopairs"
 
     -- Make commenting easier
-    use 'numToStr/Comment.nvim'
+    use "numToStr/Comment.nvim"
+
+    -- Add git related info in the signs columns and popups
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
 
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
