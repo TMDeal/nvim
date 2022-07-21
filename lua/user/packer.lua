@@ -95,8 +95,14 @@ packer.startup(function(use)
         end
     }
 
+    -- Set commentstring based on cursor position in file
+    use 'JoosepAlviste/nvim-ts-context-commentstring'
+
     -- Close matching sets of (,",',} and so on
     use "windwp/nvim-autopairs"
+
+    -- Make commenting easier
+    use 'numToStr/Comment.nvim'
 
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
