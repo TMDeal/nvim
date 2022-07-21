@@ -134,6 +134,14 @@ packer.startup(function(use)
         end
     }
 
+    -- Enable surround motions
+    use {
+        "kylechui/nvim-surround",
+        config = function()
+            require("nvim-surround").setup()
+        end
+    }
+
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
     if packer_bootstrap then
