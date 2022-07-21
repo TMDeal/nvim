@@ -112,12 +112,16 @@ packer.startup(function(use)
         end
     }
 
+    -- Highlight colorcodes to the color they represent
     use {
         "norcalli/nvim-colorizer.lua",
         config = function ()
             require("colorizer").setup()
         end
     }
+
+    -- Visualise indent levels
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
