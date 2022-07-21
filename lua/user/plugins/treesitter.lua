@@ -1,20 +1,23 @@
-local treesitter_ok, configs = pcall(require, "nvim-treesitter.configs")
+local treesitter_ok, _ = pcall(require, "nvim-treesitter")
 if not treesitter_ok then
     return
 end
 
+local configs = require("nvim-treesitter.configs")
+local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+
 configs.setup {
     -- Ensure these parsers are always installed
-    ensure_installed = {},
+    ensure_installed = "all",
 
     -- Automatically install relevant parser when opening file
-    auto_install = true,
+    auto_install = false,
 
     -- Install parsers asynchronously
     sync_install = false,
 
     -- Do not install these parsers
-    ignore_install = {},
+    ignore_install = { "markdown", "markdown_inline" },
 
     autopairs = {
         enable = true
@@ -39,3 +42,12 @@ configs.setup {
         disable = { "yaml" }
     }
 }
+
+-- print(vim.inspect(parser_configs.markdown))
+-- parser_configs.markdown = {
+--   install_info = {
+--     url = "https://github.com/ikatyang/tree-sitter-markdown",
+--     files = { "src/parser.c", "src/scanner.cc" },
+--   },
+--   filetype = "markdown",
+-- }

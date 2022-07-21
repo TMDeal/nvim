@@ -142,6 +142,14 @@ packer.startup(function(use)
         end
     }
 
+    -- pandoc/markdown support
+    use 'vim-pandoc/vim-pandoc'
+    use 'vim-pandoc/vim-pandoc-syntax'
+    use 'dhruvasagar/vim-table-mode'
+
+    -- Leader Guide
+    use 'folke/which-key.nvim'
+
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
     if packer_bootstrap then

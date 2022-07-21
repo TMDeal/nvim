@@ -68,6 +68,9 @@ local function lsp_keymaps(bufnr)
 
     -- Format buffer
     bkeymap(bufnr, 'n', '<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+    -- Register keymaps in which-key to local buffer
+    require("user.plugins.which-key").register_lsp(bufnr)
 end
 
 M.on_attach = function(client, bufnr)
