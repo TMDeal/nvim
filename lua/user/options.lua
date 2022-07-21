@@ -1,6 +1,15 @@
 local opt = vim.opt
 local cache_root = vim.fn.stdpath('cache')
 
+-- Make sure cache subdirs exist
+local cache_dirs = { '/tags', '/backup', '/undo', '/swap' }
+for i = 1, #cache_dirs do
+    local dir = cache_root .. cache_dirs[i]
+    if vim.fn.isdirectory(dir) == 0 then
+        vim.fn.mkdir(dir)
+    end
+end
+
 -- Incremental live completion
 opt.inccommand = 'split'
 
