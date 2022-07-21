@@ -28,6 +28,7 @@ autocmd("BufWritePost", {
     group = augroup("packer_user_config", { clear = true }),
     pattern = "packer.lua",
     callback = function()
+        vim.cmd[[source <afile>]]
         packer.sync()
     end
 })
@@ -53,6 +54,14 @@ packer.startup(function(use)
 
     -- Prerequisite for most lua plugins
     use "nvim-lua/plenary.nvim"
+
+    -- Colorschemes
+    use {
+        "arcticicestudio/nord-vim",
+        config = function()
+            vim.cmd[[colorscheme nord]]
+        end
+    }
 
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
