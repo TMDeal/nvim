@@ -153,6 +153,9 @@ packer.startup(function(use)
     -- Know where the root of the project is always
     use 'ahmedkhalf/project.nvim'
 
+    -- File Tree
+    use "kyazdani42/nvim-tree.lua"
+
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
     if PACKER_BOOTSTRAP then
