@@ -95,6 +95,9 @@ packer.startup(function(use)
         end
     }
 
+    -- Close matching sets of (,",',} and so on
+    use "windwp/nvim-autopairs"
+
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
     if packer_bootstrap then

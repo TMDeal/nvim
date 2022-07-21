@@ -16,6 +16,10 @@ configs.setup {
     -- Do not install these parsers
     ignore_install = {},
 
+    autopairs = {
+        enable = true
+    },
+
     highlight = {
         enable = true,
         disable = {},
