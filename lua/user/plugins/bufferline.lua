@@ -24,4 +24,3 @@ bufferline.setup {
 local opts = { noremap = true, silent = true }
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
-keymap("n", "<leader>bd", ":Bdelete<CR>", opts)

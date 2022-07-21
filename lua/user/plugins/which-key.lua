@@ -29,13 +29,21 @@ wk.setup {
 
 wk.register({
     ["-"] = { "Split Window Horizontally" },
-    ["\\"] = { "Split Window Vertically" }
-}, { prefix = "<leader>" })
+    ["\\"] = { "Split Window Vertically" },
 
+    n = {
+        name = "NvimTree",
 
-wk.register({
+        t = "Toggle NvimTree",
+        f = "Focus NvimTree",
+        c = "Collapse NvimTree"
+    },
+
+    q = "Close current buffer",
+
     t = {
         name = "Telescope",
+
         f = { "Find Files" },
         ["<space>"] = { "List Buffers" },
         l = { "Find in Current Buffer" },
@@ -53,12 +61,11 @@ wk.register({
             s = { "Git Status" },
         },
         p = { "Projects" }
-    }
-}, { prefix = "<leader>" })
+    },
 
-wk.register({
     T = {
         name = "Markdown Table Mode",
+
         m = { "Toggle" },
         t = { "Tableize Selection" },
         T = { "Tableize Selection with Delimeter" },
@@ -81,6 +88,7 @@ wk.register({
         },
         s = { "Sort Column" }
     }
+
 }, { prefix = "<leader>" })
 
 M.register_lsp = function(bufnr)
