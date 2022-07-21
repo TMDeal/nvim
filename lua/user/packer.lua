@@ -155,6 +155,15 @@ packer.startup(function(use)
 
     -- File Tree
     use "kyazdani42/nvim-tree.lua"
+    
+
+    -- Fancy tabline for buffers/tabs
+    use {
+        'akinsho/bufferline.nvim',
+        tag = "v2.*",
+        requires = 'kyazdani42/nvim-web-devicons'
+    }
+    use "moll/vim-bbye"
 
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
