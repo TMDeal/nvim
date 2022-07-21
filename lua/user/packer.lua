@@ -106,9 +106,16 @@ packer.startup(function(use)
 
     -- Add git related info in the signs columns and popups
     use {
-        'lewis6991/gitsigns.nvim',
+        "lewis6991/gitsigns.nvim",
         config = function()
-            require('gitsigns').setup()
+            require("gitsigns").setup()
+        end
+    }
+
+    use {
+        "norcalli/nvim-colorizer.lua",
+        config = function ()
+            require("colorizer").setup()
         end
     }
 
