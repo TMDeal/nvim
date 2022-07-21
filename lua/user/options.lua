@@ -85,7 +85,7 @@ opt.splitbelow = true
 opt.wrap = false
 
 -- Set completeopt to have a better completion experience
-opt.completeopt="menuone,noinsert,noselect"
+opt.completeopt = "menuone,noinsert,noselect"
 
 -- Set title of tabs
 opt.titlestring = '%t'

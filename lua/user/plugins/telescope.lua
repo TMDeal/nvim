@@ -82,6 +82,9 @@ telescope.setup {
     }
 }
 
+-- Load projects extension for project.nvim
+require('telescope').load_extension('projects')
+
 local opts = { noremap = true, silent = true }
 
 -- Search files
@@ -102,3 +105,5 @@ keymap('n', '<leader>tGc', [[<cmd>lua require('telescope.builtin').git_commits()
 keymap('n', '<leader>tGb', [[<cmd>lua require('telescope.builtin').git_branches()<cr>]], opts)
 -- Check git status
 keymap('n', '<leader>tGs', [[<cmd>lua require('telescope.builtin').git_status()<cr>]], opts)
+-- Integrate with project.nvim
+keymap('n', '<leader>tp', [[<cmd>lua require('telescope').extensions.projects.projects()<cr>]], opts)

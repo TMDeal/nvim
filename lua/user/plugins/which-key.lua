@@ -24,7 +24,7 @@ wk.setup {
 
     triggers = { "<leader>", "`", "\"" }, -- input triggers
 
-    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ "}, -- hide mapping boilerplate
+    hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
 }
 
 wk.register({
@@ -55,7 +55,6 @@ wk.register({
         p = { "Projects" }
     }
 }, { prefix = "<leader>" })
-
 
 wk.register({
     T = {

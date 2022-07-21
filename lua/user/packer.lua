@@ -5,7 +5,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system {
+    PACKER_BOOTSTRAP = fn.system {
         "git",
         "clone",
         "--depth",
@@ -14,7 +14,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
         install_path
     }
 
-    vim.cmd[[packadd packer.nvim]]
+    vim.cmd [[packadd packer.nvim]]
 end
 
 -- Use protected call to avoid erroring out on first use
@@ -28,7 +28,7 @@ autocmd("BufWritePost", {
     group = augroup("packer_user_config", { clear = true }),
     pattern = "packer.lua",
     callback = function()
-        vim.cmd[[source <afile>]]
+        vim.cmd [[source <afile>]]
         packer.sync()
     end
 })
@@ -59,7 +59,7 @@ packer.startup(function(use)
     use {
         "arcticicestudio/nord-vim",
         config = function()
-            vim.cmd[[colorscheme nord]]
+            vim.cmd [[colorscheme nord]]
         end
     }
 
@@ -115,7 +115,7 @@ packer.startup(function(use)
     -- Highlight colorcodes to the color they represent
     use {
         "norcalli/nvim-colorizer.lua",
-        config = function ()
+        config = function()
             require("colorizer").setup()
         end
     }
@@ -150,9 +150,12 @@ packer.startup(function(use)
     -- Leader Guide
     use 'folke/which-key.nvim'
 
+    -- Know where the root of the project is always
+    use 'ahmedkhalf/project.nvim'
+
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
-    if packer_bootstrap then
+    if PACKER_BOOTSTRAP then
         packer.sync()
     end
 end)

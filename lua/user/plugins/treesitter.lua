@@ -4,7 +4,6 @@ if not treesitter_ok then
 end
 
 local configs = require("nvim-treesitter.configs")
-local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
 
 configs.setup {
     -- Ensure these parsers are always installed
@@ -42,12 +41,3 @@ configs.setup {
         disable = { "yaml" }
     }
 }
-
--- print(vim.inspect(parser_configs.markdown))
--- parser_configs.markdown = {
---   install_info = {
---     url = "https://github.com/ikatyang/tree-sitter-markdown",
---     files = { "src/parser.c", "src/scanner.cc" },
---   },
---   filetype = "markdown",
--- }
