@@ -74,6 +74,27 @@ packer.startup(function(use)
     -- Snippets
     use "L3MON4D3/LuaSnip"
 
+    -- LSP
+    use "neovim/nvim-lspconfig"
+    use "williamboman/nvim-lsp-installer"
+
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.0',
+        requires = {
+            { 'nvim-lua/plenary.nvim' }
+        }
+    }
+
+    -- Treesitter
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            require('nvim-treesitter.install').update({ with_sync = true })
+        end
+    }
+
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
     if packer_bootstrap then
