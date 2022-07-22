@@ -15,12 +15,6 @@ keymap('v', '<F1>', '<nop>', opts)
 keymap('n', 'Q', '<nop>', opts)
 keymap('n', 'q:', '<nop>', opts)
 
--- Switch windows painlessly
-keymap('n', '<C-h>', '<C-w>h', opts)
-keymap('n', '<C-j>', '<C-w>j', opts)
-keymap('n', '<C-k>', '<C-w>k', opts)
-keymap('n', '<C-l>', '<C-w>l', opts)
-
 -- Windows splits
 keymap('n', '<leader>-', ':<C-u>split<cr>', opts)
 keymap('n', '<leader>\\', ':<C-u>vsplit<cr>', opts)

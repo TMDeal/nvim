@@ -59,7 +59,7 @@ packer.startup(function(use)
     use "lewis6991/impatient.nvim"
 
     -- Integrate seamlessly with tmux
-    use "christoomey/vim-tmux-navigator"
+    use "aserowy/tmux.nvim"
 
     -- Sudo write/read inside vim
     use "lambdalisue/suda.vim"
