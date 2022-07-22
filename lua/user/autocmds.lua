@@ -8,29 +8,30 @@ local terminal = augroup("terminal", { clear = true })
 
 -- Remeber where the curser was when reopening a file
 autocmd("BufReadPost", {
-        group = remember_last_position,
-        callback = function()
-            local row, col = unpack(vim.api.nvim_buf_get_mark(0, "\""))
-            if {row, col} ~= {0, 0} then
-                vim.api.nvim_win_set_cursor(0, {row, 0})
-            end
+    group = remember_last_position,
+    callback = function()
+        local row, col = unpack(vim.api.nvim_buf_get_mark(0, "\""))
+        local end_line = vim.fn.line("$")
+        if row ~= 0 and row <= end_line then
+            vim.api.nvim_win_set_cursor(0, {row, col})
         end
+    end
 })
 
 --Remap escape to leave terminal mode
 autocmd("TermOpen", {
-        group = terminal,
-        callback = function()
-            keymap("t", "<ESC>", "<c-\\><c-n>", { noremap = true })
-        end
+    group = terminal,
+    callback = function()
+        keymap("t", "<ESC>", "<c-\\><c-n>", { noremap = true })
+    end
 })
 
 -- Highlight on yank
 autocmd("TextYankPost", {
-        group = yank_highlight,
-        callback = function()
-            vim.highlight.on_yank()
-        end
+    group = yank_highlight,
+    callback = function()
+        vim.highlight.on_yank()
+    end
 })
 
 -- Change settings for markdown
