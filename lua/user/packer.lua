@@ -61,6 +61,9 @@ packer.startup(function(use)
     -- Integrate seamlessly with tmux
     use "christoomey/vim-tmux-navigator"
 
+    -- Sudo write/read inside vim
+    use "lambdalisue/suda.vim"
+
     -- Colorschemes
     use {
         "arcticicestudio/nord-vim",
