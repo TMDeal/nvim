@@ -136,7 +136,7 @@ packer.startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
 
     -- Fancy Statusline
-    use "hoob3rt/lualine.nvim"
+    use "nvim-lualine/lualine.nvim"
 
     -- Fancy Icons
     use {
