@@ -177,6 +177,15 @@ packer.startup(function(use)
     }
     use "moll/vim-bbye"
 
+    -- Open easy to use terminal
+    use {
+        "akinsho/toggleterm.nvim",
+        tag = 'v2.*'
+    }
+
+    -- Startup menu
+    use 'goolord/alpha-nvim'
+
     -- Automatically setup everything after cloning packer.nvim
     -- This should be after all plugins
     if PACKER_BOOTSTRAP then

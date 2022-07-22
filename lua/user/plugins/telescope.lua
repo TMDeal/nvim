@@ -89,16 +89,16 @@ local opts = { noremap = true, silent = true }
 
 -- Search files
 keymap('n', '<leader>tf', [[<cmd>lua require('telescope.builtin').find_files()<cr>]], opts)
+-- Search recently used files
+keymap('n', '<leader>to', [[<cmd>lua require('telescope.builtin').oldfiles()<cr>]], opts)
 -- Search buffers
 keymap('n', '<leader>t<space>', [[<cmd>lua require('telescope.builtin').buffers()<cr>]], opts)
 -- Find in current buffer with fuzzy search
 keymap('n', '<leader>tl', [[<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>]], opts)
 -- Search Tags
 keymap('n', '<leader>tt', [[<cmd>lua require('telescope.builtin').tags()<cr>]], opts)
--- Grep string under cursor or visual selection
-keymap('n', '<leader>tgc', [[<cmd>lua require('telescope.builtin').grep_string()<cr>]], opts)
 -- Grep within current project
-keymap('n', '<leader>tgs', [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
+keymap('n', '<leader>tg', [[<cmd>lua require('telescope.builtin').live_grep()<cr>]], opts)
 -- Check git commits
 keymap('n', '<leader>tGc', [[<cmd>lua require('telescope.builtin').git_commits()<cr>]], opts)
 -- Check git branches

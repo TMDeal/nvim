@@ -28,8 +28,10 @@ wk.setup {
 }
 
 wk.register({
-    ["-"] = { "Split Window Horizontally" },
-    ["\\"] = { "Split Window Vertically" },
+    ["`"] = "Open Terminal",
+
+    ["-"] = "Split Window Horizontally",
+    ["\\"] = "Split Window Vertically",
 
     n = {
         name = "NvimTree",
@@ -51,49 +53,45 @@ wk.register({
     t = {
         name = "Telescope",
 
-        f = { "Find Files" },
-        ["<space>"] = { "List Buffers" },
-        l = { "Find in Current Buffer" },
-        t = { "Tags" },
-        ["?"] = { "Open Old Files" },
-        g = {
-            name = "Grep",
-            c = { "Grep on Cursor" },
-            s = { "Grep on Project" }
-        },
+        f = "Find Files",
+        ["<space>"] = "List Buffers",
+        l = "Find in Current Buffer",
+        t = "Tags",
+        o = "Open Old Files",
+        g = "Grep",
         G = {
             name = "Git",
-            c = { "Git Commits" },
-            b = { "Git Branches" },
-            s = { "Git Status" },
+            c = "Git Commits",
+            b = "Git Branches",
+            s = "Git Status",
         },
-        p = { "Projects" }
+        p = "Projects"
     },
 
     T = {
         name = "Markdown Table Mode",
 
-        m = { "Toggle" },
-        t = { "Tableize Selection" },
-        T = { "Tableize Selection with Delimeter" },
-        r = { "Realign Columns" },
-        ["?"] = { "Echo Cell Representation" },
+        m = "Toggle",
+        t = "Tableize Selection",
+        T = "Tableize Selection with Delimeter",
+        r = "Realign Columns",
+        ["?"] = "Echo Cell Representation",
         d = {
             name = "Delete",
-            d = { "Delete Row" },
-            c = { "Delete Column" }
+            d = "Delete Row",
+            c = "Delete Column"
         },
         i = {
             name = "Insert",
-            C = { "Insert Column Before" },
-            c = { "Insert Column After" }
+            C = "Insert Column Before",
+            c = "Insert Column After"
         },
         f = {
             name = "Formulas",
-            a = { "Add Formula" },
-            e = { "Evaluate Formula" }
+            a = "Add Formula",
+            e = "Evaluate Formula"
         },
-        s = { "Sort Column" }
+        s = "Sort Column"
     }
 
 }, { prefix = "<leader>" })
@@ -104,17 +102,17 @@ M.register_lsp = function(bufnr)
             name = "LSP",
             w = {
                 name = "Workspaces",
-                a = { "Add Workspace Folder" },
-                r = { "Remove Workspace Folder" },
-                l = { "List Workspace Folders" }
+                a = "Add Workspace Folder",
+                r = "Remove Workspace Folder",
+                l = "List Workspace Folders"
             },
-            s = { "Signature Help" },
-            d = { "Type Definition" },
-            r = { "Rename" },
-            c = { "Code Action" },
-            e = { "Show Diagnostics Popup" },
-            q = { "Set Loclist" },
-            f = { "Format File" }
+            s = "Signature Help",
+            d = "Type Definition",
+            r = "Rename",
+            c = "Code Action",
+            e = "Show Diagnostics Popup",
+            q = "Set Loclist",
+            f = "Format File"
         }
     }, { prefix = "<leader>", buffer = bufnr })
 end
