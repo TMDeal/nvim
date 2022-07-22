@@ -33,6 +33,8 @@ wk.register({
     ["-"] = "Split Window Horizontally",
     ["\\"] = "Split Window Vertically",
 
+    g = "Lazygit",
+
     n = {
         name = "NvimTree",
 

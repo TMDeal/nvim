@@ -167,7 +167,6 @@ packer.startup(function(use)
 
     -- File Tree
     use "kyazdani42/nvim-tree.lua"
-    
 
     -- Fancy tabline for buffers/tabs
     use {
