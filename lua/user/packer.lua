@@ -58,6 +58,9 @@ packer.startup(function(use)
     -- Make startup fastlike
     use "lewis6991/impatient.nvim"
 
+    -- Integrate seamlessly with tmux
+    use "christoomey/vim-tmux-navigator"
+
     -- Colorschemes
     use {
         "arcticicestudio/nord-vim",
