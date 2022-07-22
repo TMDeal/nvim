@@ -6,6 +6,7 @@ local remember_last_position = augroup("remember_last_position_group", { clear =
 local yank_highlight = augroup("yank_highlight", { clear = true })
 local terminal = augroup("terminal", { clear = true })
 local markdown = augroup("markdown", { clear = true })
+local nvim_config = augroup("nvim_config", { clear = true })
 
 -- Remeber where the curser was when reopening a file
 autocmd("BufReadPost", {
@@ -51,5 +52,20 @@ autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
     pattern = { "*.markdown", "*.mdown", "*.mkd", "*.mkdn", "*.mdwn", "*.md" },
     callback = function()
         vim.opt_local.filetype = "pandoc"
+    end
+})
+
+-- Reload vim config whenever part of it is updated
+autocmd("BufWritePost", {
+    group = nvim_config,
+    pattern = { "/home/trent/.config/nvim/*.lua" },
+    callback = function()
+        local reload_ok, reload = pcall(require, "plenary.reload")
+        if not reload_ok then
+            return
+        end
+
+        reload.reload_module("user")
+        vim.cmd [[luafile ~/.config/nvim/init.lua]]
     end
 })
