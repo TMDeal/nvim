@@ -8,6 +8,11 @@ if not snip_ok then
     return
 end
 
+local lspkind_ok, lspkind = pcall(require, "lspkind")
+if not lspkind_ok then
+    return
+end
+
 -- Allows loading vscode plugin snippets
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -57,5 +62,15 @@ cmp.setup {
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" }
+    },
+
+    formatting = {
+        format = lspkind.cmp_format {
+            mode = "symbol_text",
+            maxwidth = 50,
+            before = function(entry, vim_item)
+                return vim_item
+            end
+        }
     }
 }

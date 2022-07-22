@@ -92,3 +92,4 @@ opt.titlestring = '%t'
 
 -- Enable extra colors in terminal
 opt.termguicolors = true
+opt.guifont = "Anonymice Nerd Font:h12"
