@@ -59,6 +59,7 @@ cmp.setup {
     sources = {
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
+        { name = "cmp_pandoc" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" }
@@ -91,3 +92,13 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline', keyword_length = 3 }
     }
 })
+
+local cmp_pandoc_ok, cmp_pandoc = pcall(require, "cmp_pandoc")
+if not cmp_pandoc_ok then
+    return
+end
+
+
+cmp_pandoc.setup {
+    filetypes = { "pandoc", "markdown", "rmd" },
+}

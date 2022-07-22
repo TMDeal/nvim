@@ -5,6 +5,7 @@ local keymap = vim.api.nvim_set_keymap
 local remember_last_position = augroup("remember_last_position_group", { clear = true })
 local yank_highlight = augroup("yank_highlight", { clear = true })
 local terminal = augroup("terminal", { clear = true })
+local markdown = augroup("markdown", { clear = true })
 
 -- Remeber where the curser was when reopening a file
 autocmd("BufReadPost", {
@@ -34,11 +35,21 @@ autocmd("TextYankPost", {
     end
 })
 
--- Change settings for markdown
+-- enable word wrap and spellcheck for markdown files
 autocmd("FileType", {
-    pattern = "markdown",
+    group = markdown,
+    pattern = { "*.markdown", "*.mdown", "*.mkd", "*.mkdn", "*.mdwn", "*.md" },
     callback = function()
-        vim.b.wrap = true
-        vim.b.spell = true
+        vim.opt_local.wrap = true
+        vim.opt_local.spell = true
+    end
+})
+
+-- Treat markdown files as pandoc filetype
+autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
+    group = markdown,
+    pattern = { "*.markdown", "*.mdown", "*.mkd", "*.mkdn", "*.mdwn", "*.md" },
+    callback = function()
+        vim.opt_local.filetype = "pandoc"
     end
 })

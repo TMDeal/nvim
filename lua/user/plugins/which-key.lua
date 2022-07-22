@@ -39,6 +39,13 @@ wk.register({
         c = "Collapse NvimTree"
     },
 
+    p = {
+        name = "Pandoc",
+
+        b = "Default Build",
+        ["1"] = "Build with eisvogel template",
+    },
+
     q = "Close current buffer",
 
     t = {

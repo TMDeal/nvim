@@ -15,9 +15,6 @@ configs.setup {
     -- Install parsers asynchronously
     sync_install = false,
 
-    -- Do not install these parsers
-    ignore_install = { "markdown", "markdown_inline" },
-
     autopairs = {
         enable = true
     },
@@ -32,8 +29,7 @@ configs.setup {
         disable = {},
 
         -- Also will use vims default method of syntax highlighting
-        -- May slow things down, apparently
-        additional_vim_regex_highlighting = false
+        additional_vim_regex_highlighting = true
     },
 
     indent = {
