@@ -1,6 +1,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
-local keymap = vim.api.nvim_set_keymap
+local local_keymap = vim.api.nvim_buf_set_keymap
 
 local remember_last_position = augroup("remember_last_position_group", { clear = true })
 local yank_highlight = augroup("yank_highlight", { clear = true })
@@ -23,7 +23,8 @@ autocmd("BufReadPost", {
 autocmd("TermOpen", {
     group = terminal,
     callback = function()
-        keymap("t", "<ESC>", "<c-\\><c-n>", { noremap = true })
+        local opts = {noremap = true}
+        local_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
     end
 })
 
