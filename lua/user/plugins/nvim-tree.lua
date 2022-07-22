@@ -11,6 +11,14 @@ end
 local keymap = vim.api.nvim_set_keymap
 
 nvim_tree.setup {
+    -- settings for Project.nvim
+    respect_buf_cwd = true,
+    update_cwd = true,
+    update_focused_file = {
+        enable = true,
+        update_cwd = true
+    },
+
     disable_netrw = true,
     hijack_netrw = true,
 
