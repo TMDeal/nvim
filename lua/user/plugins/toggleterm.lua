@@ -5,7 +5,7 @@ end
 
 toggleterm.setup {
     size = 20,
-    open_mapping = [[<leader>`]],
+    open_mapping = [[<c-\>]],
     hide_numbers = true,
     start_in_insert = true,
     insert_mappings = false,
