@@ -20,21 +20,6 @@ local spec = {
 
   'tpope/vim-sleuth',
 
-  {
-    'neovim/nvim-lspconfig',
-    dependencies = {
-      { 'williamboman/mason.nvim', config = true },
-      'williamboman/mason-lspconfig.nvim',
-      { 'j-hui/fidget.nvim', opts = {} },
-      'folke/neodev.nvim',
-    },
-  },
-
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'hrsh7th/cmp-nvim-lsp', 'L3MON4D3/LuaSnip', 'saadparwaiz1/cmp_luasnip' },
-  },
-
   { 'folke/which-key.nvim', opts = {} },
   {
     'lewis6991/gitsigns.nvim',
@@ -57,17 +42,6 @@ local spec = {
     end,
   },
 
-  {
-    'nvim-lualine/lualine.nvim',
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'nord',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
 
   {
     'lukas-reineke/indent-blankline.nvim',
@@ -78,24 +52,6 @@ local spec = {
   },
 
   { 'numToStr/Comment.nvim', opts = {} },
-
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
-
-  {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'make',
-    cond = function()
-      return vim.fn.executable 'make' == 1
-    end,
-  },
-
-  {
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    build = ":TSUpdate",
-  },
 
   { import = 'TMDeal.plugins' },
 }
